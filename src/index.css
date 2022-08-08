@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400;500&display=swap');
+
+.dark-mode {
+    --fonts-family: 'Roboto', sans-serif;
+    --bg-clr: #121212;
+    --text-clr: #fff;
+    --input-borderBottom:1px solid rgba(255, 255, 255, 0.2); 
+    --input-borderBottom-hover:1px solid rgba(255, 255, 255, 0.5); 
+    --delete-clr: red;
+    --edit-clr: beige;
+    --BalloBhai-font: 'Baloo Bhai 2', cursive;
+    --data-bg: rgba(67, 63, 63, 0.27);
+    --modal-bg: #000;
+    --data-bg-hover: rgba(67, 63, 63, 0.40);
+}
+
+.light-mode {
+    --bg-clr: #eee;
+    --fonts-family: 'Roboto', sans-serif;
+    --text-clr: #121212;
+    --input-borderBottom: 1px solid rgba(67, 63, 63, 0.4); 
+    --input-borderBottom-hover:1px solid rgba(67, 63, 63, 0.8); 
+    --delete-clr: red;
+    --edit-clr: green;
+    --BalloBhai-font: 'Baloo Bhai 2', cursive;
+    --data-bg: rgba(67, 63, 63, 0.05);
+    --data-bg-hover: rgba(67, 63, 63, 0.02);
+    --modal-bg: #fff;
+}
+
+/* global custome css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonts-family);
+    background-color: var(--bg-clr);
+    color: var(--text-clr);
+    transition: background-color 0.4s ease-in-out;
+}
+
+/* navbar heading  */
+.navHeading {
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+.themes {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+    cursor: pointer;
+    color: var(--text-clr);
+    transition: 0.3s ease-in-out;
+}
+
+.theme-icon:hover {
+    transform: scale(1.1);
+    transition: 0.5s ease-in-out;
+}
+
+/* inputTask style */
+.newOne {
+    background-color: blue;
+}
+
+.inputTask input , .modalInput{
+    width: 85%;
+    outline: none;
+    border: none;
+    background: transparent;
+    /* From https://css.glass */
+    color: var(--text-clr);
+    border-bottom: var(--input-borderBottom);
+    transition: border-bottom 0.3s ease-in-out;
+    font-weight: 600;
+    font-family: var(--BalloBhai-font);
+    padding: 0 10px;
+}
+.inputTask input:hover,.modalInput:hover{
+    border-bottom: var(--input-borderBottom-hover);
+}
+
+.addInputData{
+    font-size: 2.2rem;
+    font-weight: 900;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.addInputData:hover{
+    transform:scale(1.1);
+}
+
+/* taskData  */
+.taskData{
+    width: 100%;
+}
+
+.data{
+    width: 100%;
+    background: var(--data-bg);
+    /* background: rgba(255, 255, 255,  0.86); */
+    border-radius: 20px;
+    padding: 20px 20px 6px 20px;
+    transition: all 0.3s ease-in-out;
+}
+.data:hover{
+    background: var(--data-bg-hover);
+    transform: translateY(-5px);
+}
+.textData{
+    width: 100%;
+    /* height: 120px; */
+    padding: 10px 0;
+    /* overflow: scroll; */
+    font-size: 1rem;
+    color: var(--text-clr);
+    font-weight: 500;
+    font-family:var(--BalloBhai-font);
+    text-transform: capitalize;
+}
+.delete{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--delete-clr);
+}
+.edit{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-left: 10px;
+    cursor: pointer;
+    /* color: var(--edit-clr); */
+    color:var(--edit-clr);
+}
+.createdAt{
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+.showData{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--edit-clr);
+}
+.myModalData{
+    padding: 10px 0;
+}
+
+#staticBackdropLabel{
+    color: var(--text-clr);
+}
+.modal-body{
+    font-size: 1rem;
+    color: var(--text-clr);
+    font-weight: 500;
+    font-family:var(--BalloBhai-font);
+    text-transform: capitalize;
+}
+.modal-content{
+    background-color: var(--modal-bg);
+}
